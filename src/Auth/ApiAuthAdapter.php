@@ -1,9 +1,9 @@
 <?php
 
-namespace BricksUser\Auth;
+namespace ZendBricks\BricksUser\Auth;
 
 use Zend\Authentication\Adapter\AbstractAdapter;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 use Zend\Crypt\Password\Bcrypt;
 use Zend\Authentication\Result;
 

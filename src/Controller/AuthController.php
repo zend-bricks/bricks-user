@@ -1,18 +1,18 @@
 <?php
 
-namespace BricksUser\Controller;
+namespace ZendBricks\BricksUser\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 use Zend\Authentication\AuthenticationService;
-use BricksUser\Form\LoginForm;
-use BricksUser\Form\RegisterForm;
+use ZendBricks\BricksUser\Form\LoginForm;
+use ZendBricks\BricksUser\Form\RegisterForm;
 use Zend\Crypt\Password\Bcrypt;
-use BricksUser\Model\UserMailModel;
+use ZendBricks\BricksUser\Model\UserMailModel;
 use Zend\Authentication\Result;
 use Zend\Cache\Storage\Adapter\AbstractAdapter;
-use BricksUser\Form\SpecifyMailForm;
-use BricksUser\Form\ChangePasswordForm;
+use ZendBricks\BricksUser\Form\SpecifyMailForm;
+use ZendBricks\BricksUser\Form\ChangePasswordForm;
 
 /**
  * User Authentication

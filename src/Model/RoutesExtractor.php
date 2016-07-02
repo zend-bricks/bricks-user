@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Model;
+namespace ZendBricks\BricksUser\Model;
 
 class RoutesExtractor
 {

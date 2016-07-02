@@ -1,10 +1,10 @@
 <?php
 
-namespace BricksUser\Controller;
+namespace ZendBricks\BricksUser\Controller;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
-use BricksUser\Controller\ConsoleController;
+use ZendBricks\BricksUser\Controller\ConsoleController;
 
 class ConsoleControllerFactory implements FactoryInterface
 {

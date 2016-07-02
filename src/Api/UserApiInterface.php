@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Api;
+namespace ZendBricks\BricksUser\Api;
 
 interface UserApiInterface {
     const SERVICE_NAME = 'BricksUserApi';

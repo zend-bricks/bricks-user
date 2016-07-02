@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Controller;
+namespace ZendBricks\BricksUser\Controller;
 
 use BricksCommon\Controller\CrudController;
 

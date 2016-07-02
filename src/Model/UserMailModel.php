@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Model;
+namespace ZendBricks\BricksUser\Model;
 
 use BricksCommon\Model\MailModel;
 use Zend\Mail\Message as MailMessage;

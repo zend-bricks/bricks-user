@@ -1,11 +1,11 @@
 <?php
 
-namespace BricksUser\Auth;
+namespace ZendBricks\BricksUser\Auth;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Zend\Authentication\AuthenticationService;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class AuthServiceFactory implements FactoryInterface
 {

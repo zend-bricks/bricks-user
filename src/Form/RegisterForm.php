@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Form;
+namespace ZendBricks\BricksUser\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element\Text;

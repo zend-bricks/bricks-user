@@ -1,12 +1,12 @@
 <?php
 
-namespace BricksUser;
+namespace ZendBricks\BricksUser;
 
 use Zend\Mvc\MvcEvent;
 use Zend\Console\Request;
 use Interop\Container\ContainerInterface;
 use Zend\Authentication\AuthenticationService;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class Module
 {
@@ -77,7 +77,7 @@ class Module
             $role = $userRoleCache->getItem($auth->getIdentity());
             if (!$role) {
                 /* @var $userApi UserApiInterface */
-                $userApi = $container->get(BricksUser\Api\UserApiInterface::SERVICE_NAME);
+                $userApi = $container->get(UserApiInterface::SERVICE_NAME);
                 $role = $userApi->getRoleNameByIdentity($auth->getIdentity());
                 if ($role) {
                     $userRoleCache->setItem($auth->getIdentity(), $role);

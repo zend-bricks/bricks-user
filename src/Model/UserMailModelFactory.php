@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser\Model;
+namespace ZendBricks\BricksUser\Model;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;

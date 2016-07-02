@@ -1,12 +1,12 @@
 <?php
 
-namespace BricksUser\Controller;
+namespace ZendBricks\BricksUser\Controller;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
-use BricksUser\Controller\AuthController;
+use ZendBricks\BricksUser\Controller\AuthController;
 use Zend\Authentication\AuthenticationService;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class AuthControllerFactory implements FactoryInterface
 {

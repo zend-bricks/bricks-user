@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser;
+namespace ZendBricks\BricksUser;
 
 use Zend\ServiceManager\Factory\InvokableFactory;
 

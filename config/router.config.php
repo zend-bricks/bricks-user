@@ -1,6 +1,6 @@
 <?php
 
-namespace BricksUser;
+namespace ZendBricks\BricksUser;
 
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;

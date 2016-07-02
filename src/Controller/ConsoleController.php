@@ -1,11 +1,11 @@
 <?php
 
-namespace BricksUser\Controller;
+namespace ZendBricks\BricksUser\Controller;
 
 use Zend\Mvc\Console\Controller\AbstractConsoleController;
 use Interop\Container\ContainerInterface;
-use BricksUser\Model\RoutesExtractor;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Model\RoutesExtractor;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class ConsoleController extends AbstractConsoleController
 {

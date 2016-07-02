@@ -1,11 +1,11 @@
 <?php
 
-namespace BricksUser\Auth;
+namespace ZendBricks\BricksUser\Auth;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Interop\Container\ContainerInterface;
 use Zend\Permissions\Acl\Acl;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class AclFactory implements FactoryInterface
 {

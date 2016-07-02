@@ -1,9 +1,9 @@
 <?php
 
-namespace BricksUser\Auth;
+namespace ZendBricks\BricksUser\Auth;
 
 use Zend\Authentication\Storage\StorageInterface;
-use BricksUser\Api\UserApiInterface;
+use ZendBricks\BricksUser\Api\UserApiInterface;
 
 class ApiSessionStorage implements StorageInterface
 {
