@@ -4,7 +4,7 @@ namespace ZendBricks\BricksUser;
 
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
-use User\Controller\AuthController;
+use ZendBricks\BricksUser\Controller\AuthController;
 
 return [
     'router_class' => \Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class,

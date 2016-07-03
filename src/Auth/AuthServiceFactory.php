@@ -12,7 +12,7 @@ class AuthServiceFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /* @var $userApi UserApiInterface */
-        $userApi = $container->get(UserApiInterface);
+        $userApi = $container->get(UserApiInterface::SERVICE_NAME);
         
         $storage = new ApiSessionStorage($userApi);
         
