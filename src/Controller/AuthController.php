@@ -10,7 +10,6 @@ use ZendBricks\BricksUser\Form\RegisterForm;
 use Zend\Crypt\Password\Bcrypt;
 use ZendBricks\BricksUser\Model\UserMailModel;
 use Zend\Authentication\Result;
-use Zend\Cache\Storage\Adapter\AbstractAdapter;
 use ZendBricks\BricksUser\Form\SpecifyMailForm;
 use ZendBricks\BricksUser\Form\ChangePasswordForm;
 
@@ -23,14 +22,12 @@ class AuthController extends AbstractActionController
     protected $authService;
     protected $mailModel;
     protected $projectName;
-    protected $userRoleCache;
 
-    public function __construct(UserApiInterface $api, AuthenticationService $authService, UserMailModel $mailModel, $projectName, AbstractAdapter $userRoleCache) {
+    public function __construct(UserApiInterface $api, AuthenticationService $authService, UserMailModel $mailModel, $projectName) {
         $this->api = $api;
         $this->authService = $authService;
         $this->mailModel = $mailModel;
         $this->projectName = $projectName;
-        $this->userRoleCache = $userRoleCache;
     }
 
     public function loginAction()
@@ -101,7 +98,7 @@ class AuthController extends AbstractActionController
         if ($userId) {
             $this->api->activateUser($userId);
             $this->api->deleteRegisterToken($userId);
-            $this->userRoleCache->removeItem($userId);
+            $this->api->onRoleChanged($userId);
             $this->flashMessenger()->addSuccessMessage('user.activated');
         } else {
             $this->flashMessenger()->addErrorMessage('user.not.activated');

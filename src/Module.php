@@ -71,22 +71,9 @@ class Module
         /* @var $auth AuthenticationService */
         $auth = $container->get(AuthenticationService::class);
         
+        $role = 'Guest';
         if ($auth->getIdentity()) {
-            /* @var $userRoleCache \Zend\Cache\Storage\StorageInterface */
-            $userRoleCache = $container->get('UserRoleCache');
-            $role = $userRoleCache->getItem($auth->getIdentity());
-            if (!$role) {
-                /* @var $userApi UserApiInterface */
-                $userApi = $container->get(UserApiInterface::SERVICE_NAME);
-                $role = $userApi->getRoleNameByIdentity($auth->getIdentity());
-                if ($role) {
-                    $userRoleCache->setItem($auth->getIdentity(), $role);
-                } else {
-                    $role = 'Guest';
-                }
-            }
-        } else {
-            $role = 'Guest';
+            $role = $container->get(UserApiInterface::SERVICE_NAME)->getRoleNameByIdentity($auth->getIdentity());
         }
         
         return $role;

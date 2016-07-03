@@ -17,7 +17,6 @@ class AuthControllerFactory implements FactoryInterface
         $mailModel = $container->get('UserMailModel');
         $config = $container->get('config');
         $projectName = $config['project.name'];
-        $userRoleCache = $container->get('UserRoleCache');
-        return new AuthController($api, $authService, $mailModel, $projectName, $userRoleCache);
+        return new AuthController($api, $authService, $mailModel, $projectName);
     }   
 }
