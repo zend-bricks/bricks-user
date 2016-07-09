@@ -46,6 +46,12 @@ interface UserApiInterface {
      * @return string
      */
     public function getUsernameById($userId);
+    
+    /**
+     * @param int|string $userId
+     * @return string
+     */
+    public function getEmailById($userId);
 
     /**
      * Get the password-hash of a specific user
@@ -66,6 +72,11 @@ interface UserApiInterface {
      * @param int|string $userId
      */
     public function activateUser($userId);
+    
+    /**
+     * @param int|string $userId
+     */
+    public function deleteUser($userId);
     
     /**
      * Get the role name of the user
@@ -185,6 +196,23 @@ interface UserApiInterface {
      * @param string $password
      */
     public function setPassword($userId, $password);
+    
+    /**
+     * @param int|string $userId
+     * @param string $token
+     */
+    public function createDeleteToken($userId, $token);
+    
+    /**
+     * @param string $token
+     * @return int|string
+     */
+    public function getUserIdByDeleteToken($token);
+    
+    /**
+     * @param int|string $userId
+     */
+    public function deleteDeleteToken($userId);
     
     /**
      * Event that is triggered when a new role is assigned to a user

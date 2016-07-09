@@ -1,0 +1,2 @@
+<h2><?php echo $this->translate('confirm.account.deletion') ?></h2>
+<?php echo sprintf($this->translate('delete.account.%s.at.%s.click.%s.to.confirm.deletion'), $username, $projectName, '<a href="' . $this->url('auth/confirmSelfDelete', ['token' => $token], ['force_canonical' => true]) . '">' . $this->translate('here') . '</a>') ?>

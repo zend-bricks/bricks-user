@@ -40,4 +40,21 @@ class UserMailModel extends MailModel
         $this->prepareMail($mail, $viewVariables, 'mail/forgot-password.phtml');
         $this->sendMail($mail);
     }
+    
+    public function sendAccountDeletionMail($email, $username, $token, $projectName)
+    {
+        $translator = $this->getTranslator();
+        $mail = new MailMessage();
+        $mail->setSubject(sprintf($translator->translate('confirm.account.deletion.at.%s'), $projectName));
+        $this->addTarget($email, $username);
+        
+        $viewVariables = [
+            'projectName' => $projectName,
+            'username' => $username,
+            'token' => $token
+        ];
+        
+        $this->prepareMail($mail, $viewVariables, 'mail/confirm-account-deletion.phtml');
+        $this->sendMail($mail);
+    }
 }

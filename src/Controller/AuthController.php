@@ -11,6 +11,7 @@ use Zend\Crypt\Password\Bcrypt;
 use ZendBricks\BricksUser\Model\UserMailModel;
 use Zend\Authentication\Result;
 use ZendBricks\BricksUser\Form\SpecifyMailForm;
+use ZendBricks\BricksUser\Form\SelfDeleteForm;
 use ZendBricks\BricksUser\Form\ChangePasswordForm;
 
 /**
@@ -198,12 +199,38 @@ class AuthController extends AbstractActionController
     
     public function selfDeleteAction()
     {
-        
+        $form = new SelfDeleteForm();
+        if ($this->getRequest()->isPost()) {
+            $form->setData($this->getRequest()->getPost());
+            if ($form->isValid()) {
+                $userId = $this->authService->getIdentity();
+                if ($userId) {
+                    $username = $this->api->getUsernameById($userId);
+                    $email = $this->api->getEmailById($userId);
+                    $token = $this->generateToken();
+                    $this->api->createDeleteToken($userId, $token);
+                    $this->mailModel->sendAccountDeletionMail($email, $username, $token, $this->projectName);
+                    $this->flashMessenger()->addSuccessMessage('sent.email.delete.account');
+                    return $this->redirect()->toRoute('home');
+                }
+            }
+        }
+        return [
+            'form' => $form
+        ];
     }
     
     public function confirmSelfDeleteAction()
     {
-        
+        $token = $this->params()->fromRoute('token');
+        $userId = $this->api->getUserIdByDeleteToken($token);
+        if (!$userId) {
+            $this->flashMessenger()->addErrorMessage('invalid.token');
+            return $this->redirect()->toRoute('home');
+        }
+        $this->api->deleteUser($userId);
+        $this->api->deleteDeleteToken($userId);
+        return $this->redirect()->toRoute('home');
     }
     
     /**
