@@ -74,6 +74,19 @@ interface UserApiInterface {
     public function activateUser($userId);
     
     /**
+     * @return int count of users
+     */
+    public function countUsers();
+    
+    /**
+     * Get $count users with $offset
+     * 
+     * @param int $offset
+     * @param int $count
+     */
+    public function getUsers($offset, $count);
+
+    /**
      * @param int|string $userId
      */
     public function deleteUser($userId);
@@ -105,6 +118,19 @@ interface UserApiInterface {
     public function getPermissions();
     
     /**
+     * return int count of roles
+     */
+    public function countRoles();
+    
+    /**
+     * Get $count roles with $offset
+     * 
+     * @param int $offset
+     * @param int $count
+     */
+    public function getRoles($offset, $itemCountPerPage);
+    
+    /**
      * returns roles with parent roles this way:
      * [
      *     'Guest' => [],
@@ -114,7 +140,7 @@ interface UserApiInterface {
      * 
      * @return array all available roles
      */
-    public function getRoles();
+    public function getRolesAndParent();
 
     /**
      * returns granted role - permission combinations this way:

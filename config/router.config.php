@@ -5,6 +5,8 @@ namespace ZendBricks\BricksUser;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use ZendBricks\BricksUser\Controller\AuthController;
+use ZendBricks\BricksUser\Controller\RoleController;
+use ZendBricks\BricksUser\Controller\UserController;
 
 return [
     'router_class' => \Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class,
@@ -96,6 +98,118 @@ return [
                         'route' => '/confirm-self-delete/:token',
                         'defaults' => [
                             'action' => 'confirmSelfDelete',
+                        ],
+                    ],
+                ]
+            ]
+        ],
+        'role' => [
+            'type' => Literal::class,
+            'options' => [
+                'route' => '/role',
+                'defaults' => [
+                    'controller' => RoleController::class
+                ]
+            ],
+            'child_routes' => [
+                'list' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/list[/:page]',
+                        'defaults' => [
+                            'action' => 'list',
+                        ],
+                    ],
+                ],
+                'create' => [
+                    'type' => Literal::class,
+                    'options' => [
+                        'route' => '/create',
+                        'defaults' => [
+                            'action' => 'create',
+                        ],
+                    ],
+                ],
+                'show' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/show/:id',
+                        'defaults' => [
+                            'action' => 'show',
+                        ],
+                    ],
+                ],
+                'edit' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/edit/:id',
+                        'defaults' => [
+                            'action' => 'edit',
+                        ],
+                    ],
+                ],
+                'delete' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/delete/:id',
+                        'defaults' => [
+                            'action' => 'delete',
+                        ],
+                    ],
+                ],
+                'permissionAssignment' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/permissions-assignment/:roleId',
+                        'defaults' => [
+                            'action' => 'permissionAssignment',
+                        ],
+                    ],
+                ],
+            ]
+        ],
+        'user' => [
+            'type' => Literal::class,
+            'options' => [
+                'route' => '/user',
+                'defaults' => [
+                    'controller' => UserController::class
+                ]
+            ],
+            'child_routes' => [
+                'list' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/list[/:page]',
+                        'defaults' => [
+                            'action' => 'list',
+                        ],
+                    ],
+                ],
+                'show' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/show/:id',
+                        'defaults' => [
+                            'action' => 'show',
+                        ],
+                    ],
+                ],
+                'edit' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/edit/:id',
+                        'defaults' => [
+                            'action' => 'edit',
+                        ],
+                    ],
+                ],
+                'delete' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/delete/:id',
+                        'defaults' => [
+                            'action' => 'delete',
                         ],
                     ],
                 ]

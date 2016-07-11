@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th><?= $this->translate('id') ?></th>
+            <th><?= $this->translate('username') ?></th>
+            <th><?= $this->translate('role') ?></th>
+            <th><?= $this->translate('email') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php if ($paginator->count() < 1): ?>
+        <tr>
+            <td colspan="3"><?= $this->translate('no.results') ?></td>
+        </tr>
+        <?php endif ?>
+        <?php foreach ($paginator->getCurrentItems() as $item): ?>
+        <tr>
+            <td><?= $item['id'] ?></td>
+            <td><?= $item['username'] ?></td>
+            <td><?= $item['role'] ?></td>
+            <td><?= $item['email'] ?></td>
+        </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>

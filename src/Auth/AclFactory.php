@@ -25,7 +25,7 @@ class AclFactory implements FactoryInterface
                 $acl->addResource($resource);
             }
 
-            $roles = $userApi->getRoles();
+            $roles = $userApi->getRolesAndParent();
             foreach ($roles as $role => $parents) {
                 $acl->addRole($role, $parents);
             }
