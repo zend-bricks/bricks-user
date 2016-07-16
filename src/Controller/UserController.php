@@ -37,6 +37,7 @@ class UserController extends CrudController
     protected function getListPaginator()
     {
         $paginator = new Paginator(new UserPaginatorAdapter($this->api));
+        $paginator->setItemCountPerPage(1);
         return $paginator;
     }
 

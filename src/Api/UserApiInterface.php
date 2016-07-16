@@ -118,6 +118,31 @@ interface UserApiInterface {
     public function getPermissions();
     
     /**
+     * Save data to role with $id. If no $id is set a new entry will be created
+     * 
+     * @param array $data
+     * @param int|string $id
+     * @return bool|int|string success state or insert id
+     */
+    public function saveRole($data, $id = null);
+    
+    /**
+     * Get saved data of the role
+     * 
+     * @param int|string $id
+     * @return array
+     */
+    public function getRoleData($id);
+    
+    /**
+     * Delete the role
+     * 
+     * @param int|string $id
+     * @return bool success
+     */
+    public function deleteRole($id);
+    
+    /**
      * return int count of roles
      */
     public function countRoles();
@@ -129,6 +154,11 @@ interface UserApiInterface {
      * @param int $count
      */
     public function getRoles($offset, $itemCountPerPage);
+    
+    /**
+     * @return array role names by id
+     */
+    public function getRoleNames();
     
     /**
      * returns roles with parent roles this way:
