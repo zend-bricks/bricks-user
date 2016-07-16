@@ -40,7 +40,7 @@ class AuthController extends AbstractActionController
                 $formData = $form->getData();
                 /* @var $adapter \Zend\Authentication\Adapter\AbstractAdapter */
                 $adapter = $this->authService->getAdapter();
-                $userId = $this->api->getIdByUsername($formData['username']);
+                $userId = $this->api->getUserIdByUsername($formData['username']);
                 $adapter->setIdentity($userId);
                 $adapter->setCredential($formData['password']);
                 if ($this->authService->authenticate()->getCode() == Result::SUCCESS) {
@@ -73,9 +73,9 @@ class AuthController extends AbstractActionController
             $form->setData($this->getRequest()->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
-                if ($this->api->getIdByUsername($formData['username'])) {
+                if ($this->api->getUserIdByUsername($formData['username'])) {
 -                   $this->flashMessenger()->addErrorMessage('username.in.use');
-                } elseif ($this->api->getIdByEmail($formData['email'])) {
+                } elseif ($this->api->getUserIdByEmail($formData['email'])) {
                     $this->flashMessenger()->addErrorMessage('email.in.use');
                 } else {
                     $passwordHash = $this->createPassword($formData['password']);
@@ -114,8 +114,8 @@ class AuthController extends AbstractActionController
             $form->setData($this->getRequest()->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
-                $userId = $this->api->getIdByEmail($formData['email']);
-                $username = $this->api->getUsernameById($userId);
+                $userId = $this->api->getUserIdByEmail($formData['email']);
+                $username = $this->api->getUsernameByUserId($userId);
                 $token = $this->generateToken();
                 $this->api->createRegisterToken($userId, $token);
                 $this->mailModel->sendConfirmRegistrationMail($formData['email'], $username, $token, $this->projectName);
@@ -135,9 +135,9 @@ class AuthController extends AbstractActionController
             $form->setData($this->getRequest()->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
-                $userId = $this->api->getIdByEmail($formData['email']);
+                $userId = $this->api->getUserIdByEmail($formData['email']);
                 if ($userId) {
-                    $username = $this->api->getUsernameById($userId);
+                    $username = $this->api->getUsernameByUserId($userId);
                     $token = $this->generateToken();
                     $this->api->createPasswordToken($userId, $token);
                     $this->mailModel->sendForgotPasswordMail($formData['email'], $username, $token, $this->projectName);
@@ -205,8 +205,8 @@ class AuthController extends AbstractActionController
             if ($form->isValid()) {
                 $userId = $this->authService->getIdentity();
                 if ($userId) {
-                    $username = $this->api->getUsernameById($userId);
-                    $email = $this->api->getEmailById($userId);
+                    $username = $this->api->getUsernameByUserId($userId);
+                    $email = $this->api->getEmailByUserId($userId);
                     $token = $this->generateToken();
                     $this->api->createDeleteToken($userId, $token);
                     $this->mailModel->sendAccountDeletionMail($email, $username, $token, $this->projectName);

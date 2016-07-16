@@ -33,25 +33,25 @@ interface UserApiInterface {
      * @param string $username
      * @return int
      */
-    public function getIdByUsername($username);
+    public function getUserIdByUsername($username);
+    
+    /**
+     * @param int|string $userId
+     * @return string
+     */
+    public function getUsernameByUserId($userId);
     
     /**
      * @param string $email
      * @return int
      */
-    public function getIdByEmail($email);
+    public function getUserIdByEmail($email);
     
     /**
      * @param int|string $userId
      * @return string
      */
-    public function getUsernameById($userId);
-    
-    /**
-     * @param int|string $userId
-     * @return string
-     */
-    public function getEmailById($userId);
+    public function getEmailByUserId($userId);
 
     /**
      * Get the password-hash of a specific user
@@ -60,7 +60,7 @@ interface UserApiInterface {
      * @param int|string $userId
      * @return string bcrypt hash of the password
      */
-    public function getPasswordById($userId);
+    public function getPasswordByUserId($userId);
 
     /**
      * @param int|string $userId
