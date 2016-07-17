@@ -85,6 +85,17 @@ interface UserApiInterface {
      * @param int $count
      */
     public function getUsers($offset, $count);
+    
+    /**
+     * @param array $data
+     * @param int|user $id
+     */
+    public function saveUser($data, $id = null);
+    
+    /**
+     * @param int|string $id
+     */
+    public function getUserData($id);
 
     /**
      * @param int|string $userId

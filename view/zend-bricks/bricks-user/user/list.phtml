@@ -1,6 +1,3 @@
-<a href="<?= $this->url('user/create') ?>" class="btn btn-success pull-right">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <?= $this->translate('add.user') ?>
-</a>
 <table class="table">
     <thead>
         <tr>
@@ -31,4 +28,4 @@
         <?php endforeach ?>
     </tbody>
 </table>
-<?= $this->paginationControl($paginator, null, 'zend-bricks/bricks-common/partial/pagination.phtml', ['route' => 'role/list']) ?>
+<?= $this->paginationControl($paginator, null, 'zend-bricks/bricks-common/partial/pagination.phtml', ['route' => 'user/list']) ?>

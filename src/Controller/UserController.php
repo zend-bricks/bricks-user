@@ -28,7 +28,7 @@ class UserController extends CrudController
     
     protected function getForm()
     {
-        return new UserForm();
+        return new UserForm($this->api->getRoleNames());
     }
     
     protected function save($data, $id = null)
