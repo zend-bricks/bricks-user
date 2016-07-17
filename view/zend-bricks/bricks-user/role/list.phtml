@@ -13,7 +13,7 @@
     <tbody>
         <?php if ($paginator->count() < 1): ?>
         <tr>
-            <td colspan="3"><?= $this->translate('no.results') ?></td>
+            <td colspan="4"><?= $this->translate('no.results') ?></td>
         </tr>
         <?php endif ?>
         <?php foreach ($paginator as $item): ?>
@@ -29,4 +29,4 @@
         <?php endforeach ?>
     </tbody>
 </table>
-<?= $this->paginationControl($paginator, null, 'zend-bricks/bricks-user/role/pagination.phtml', ['route' => 'role/list']) ?>
+<?= $this->paginationControl($paginator, null, 'zend-bricks/bricks-common/partial/pagination.phtml', ['route' => 'role/list']) ?>

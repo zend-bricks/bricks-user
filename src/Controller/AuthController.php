@@ -99,7 +99,7 @@ class AuthController extends AbstractActionController
         if ($userId) {
             $this->api->activateUser($userId);
             $this->api->deleteRegisterToken($userId);
-            $this->api->onRoleChanged($userId);
+            $this->api->onUserRoleChanged($userId);
             $this->flashMessenger()->addSuccessMessage('user.activated');
         } else {
             $this->flashMessenger()->addErrorMessage('user.not.activated');

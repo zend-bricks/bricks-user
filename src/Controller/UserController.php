@@ -2,7 +2,7 @@
 
 namespace ZendBricks\BricksUser\Controller;
 
-use BricksCommon\Controller\CrudController;
+use ZendBricks\BricksCommon\Controller\CrudController;
 use ZendBricks\BricksUser\Api\UserApiInterface;
 use ZendBricks\BricksUser\Form\UserForm;
 use Zend\Paginator\Paginator;
@@ -18,36 +18,36 @@ class UserController extends CrudController
     public function __construct(UserApiInterface $api) {
         $this->api = $api;
     }
-
-//    protected function getForm()
-//    {
-//        return new UserForm();
-//    }
-
-//    protected function getListRedirect()
-//    {
-//        return $this->redirect()->toRoute('user/list');
-//    }
-//
-//    protected function getById($id)
-//    {
-//        throw new \Exception('Missing implementation for ' . __METHOD__ . ' in ' . self::class);
-//    }
-
+    
     protected function getListPaginator()
     {
         $paginator = new Paginator(new UserPaginatorAdapter($this->api));
-        $paginator->setItemCountPerPage(1);
+        $paginator->setItemCountPerPage(20);
         return $paginator;
     }
-
-//    protected function save($data, $id = null)
-//    {
-//        throw new Exception('Missing implementation for ' . __METHOD__ . ' in ' . self::class);
-//    }
-//
-//    protected function deleteById($id)
-//    {
-//        throw new \Exception('Missing implementation for ' . __METHOD__ . ' in ' . self::class);
-//    }
+    
+    protected function getForm()
+    {
+        return new UserForm();
+    }
+    
+    protected function save($data, $id = null)
+    {
+        return $this->api->saveUser($data, $id);
+    }
+    
+    protected function getData($id)
+    {
+        return $this->api->getUserData($id);
+    }
+    
+    protected function deleteById($id)
+    {
+        return $this->api->deleteUser($id);
+    }
+    
+    protected function getListRedirect()
+    {
+        return $this->redirect()->toRoute('user/list');
+    }
 }

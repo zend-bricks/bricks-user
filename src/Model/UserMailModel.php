@@ -2,7 +2,7 @@
 
 namespace ZendBricks\BricksUser\Model;
 
-use BricksCommon\Model\MailModel;
+use ZendBricks\BricksCommon\Model\MailModel;
 use Zend\Mail\Message as MailMessage;
 
 class UserMailModel extends MailModel

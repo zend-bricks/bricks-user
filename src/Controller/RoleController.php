@@ -2,7 +2,7 @@
 
 namespace ZendBricks\BricksUser\Controller;
 
-use BricksCommon\Controller\CrudController;
+use ZendBricks\BricksCommon\Controller\CrudController;
 use ZendBricks\BricksUser\Api\UserApiInterface;
 use Zend\Paginator\Paginator;
 use ZendBricks\BricksUser\Model\RolePaginatorAdapter;

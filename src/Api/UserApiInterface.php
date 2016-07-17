@@ -276,5 +276,5 @@ interface UserApiInterface {
      * 
      * @param int|string $userId
      */
-    public function onRoleChanged($userId);
+    public function onUserRoleChanged($userId);
 }
