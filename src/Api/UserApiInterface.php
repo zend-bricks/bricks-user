@@ -138,6 +138,12 @@ interface UserApiInterface {
     public function saveRole($data, $id = null);
     
     /**
+     * @param int|string $roleId
+     * @return string
+     */
+    public function getRoleName($roleId);
+    
+    /**
      * Get saved data of the role
      * 
      * @param int|string $id
@@ -182,6 +188,19 @@ interface UserApiInterface {
      * @return array all available roles
      */
     public function getRolesAndParent();
+    
+    /**
+     * @param int|string $roleId
+     * @return array contains all directly assigned permission ids for the role
+     */
+    public function getPermissionsOfRole($roleId);
+    
+    /**
+     * @param int|string $roleId
+     * @param array $permissions
+     * @return bool success
+     */
+    public function setRolePermissions($roleId, $permissions);
 
     /**
      * returns granted role - permission combinations this way:

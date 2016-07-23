@@ -1,0 +1,22 @@
+<h1><?= $this->translate('permission.assignment') ?></h1>
+<div class="row">
+    <?= $this->form()->openTag($form) ?>
+    <?php foreach ($form->getPermissionGroups() as $group => $elements): ?>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?= $this->translate($group) ?>
+                </div>
+                <div class="panel-body">
+                    <?php foreach ($elements as $element): ?>
+                        <?= $this->formRow($element, Zend\Form\View\Helper\FormRow::LABEL_APPEND) ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        </div>
+    <?php endforeach ?>
+    <div class="col-xs-12">
+        <?= $this->formElement($form->get('save')) ?>
+    </div>
+    <?= $this->form()->closeTag() ?>
+</div>

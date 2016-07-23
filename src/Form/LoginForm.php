@@ -27,7 +27,7 @@ class LoginForm extends Form
         
         $submit = new Submit('login');
         $submit->setValue('login');
-        $submit->setAttribute('class', 'btn btn-default');
+        $submit->setAttribute('class', 'btn btn-primary');
         $this->add($submit);
     }
 }

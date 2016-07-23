@@ -12,6 +12,8 @@ class RoleControllerFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $api = $container->get(UserApiInterface::SERVICE_NAME);
-        return new RoleController($api);
+        $acl = $container->get('Acl');
+        $aclCache = $container->get('AclCache');
+        return new RoleController($api, $acl, $aclCache);
     }   
 }

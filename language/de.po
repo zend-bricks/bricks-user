@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bricks\n"
-"POT-Creation-Date: 2016-06-11 20:09+0200\n"
-"PO-Revision-Date: 2016-06-11 20:11+0200\n"
+"POT-Creation-Date: 2016-07-22 17:21+0200\n"
+"PO-Revision-Date: 2016-07-22 17:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,34 +16,257 @@ msgstr ""
 "addInfoMessage;addWarningMessage;setLabel;setValue\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../src/Form/LoginForm.php:19 ../src/Form/RegisterForm.php:22
-msgid "username"
-msgstr "Benutzername"
+#: ../src/Controller/AuthController.php:51
+msgid "user.not.active"
+msgstr "Benutzer nicht aktiv"
 
-#: ../src/Form/LoginForm.php:24 ../src/Form/RegisterForm.php:33
+#: ../src/Controller/AuthController.php:54
+msgid "login.failed"
+msgstr "Login fehlgeschlagen"
+
+#: ../src/Controller/AuthController.php:77
+msgid "username.in.use"
+msgstr "Benutzername wird bereits verwendet"
+
+#: ../src/Controller/AuthController.php:79
+msgid "email.in.use"
+msgstr "Email wird bereits verwendet"
+
+#: ../src/Controller/AuthController.php:103
+msgid "user.activated"
+msgstr "Benutzer wurde aktiviert"
+
+#: ../src/Controller/AuthController.php:105
+msgid "user.not.activated"
+msgstr "Benutzer wurde nicht aktiviert"
+
+#: ../src/Controller/AuthController.php:122
+msgid "resent.mail.if.exists"
+msgstr ""
+"Falls die angegebene Email-Adresse verwendet wird haben wir eine neue "
+"Bestätigungs-Mail gesendet"
+
+#: ../src/Controller/AuthController.php:144
+msgid "sent.email.change.password"
+msgstr ""
+"Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
+"ein neues Passwort festgelegt werden kann."
+
+#: ../src/Controller/AuthController.php:147
+msgid "email.not.in.use"
+msgstr "Email nicht bekannt"
+
+#: ../src/Controller/AuthController.php:164
+#: ../src/Controller/AuthController.php:228
+msgid "invalid.token"
+msgstr "Ungültiger Token"
+
+#: ../src/Controller/AuthController.php:168
+msgid "can.not.change.password.as.guest"
+msgstr "Du kannst dein Passwort nicht ändern, da du Gast bist."
+
+#: ../src/Controller/AuthController.php:179
+#: ../src/Controller/AuthController.php:187
+msgid "password.changed"
+msgstr "Passwort geändert"
+
+#: ../src/Controller/AuthController.php:190
+msgid "invalid.password"
+msgstr "Ungültiges Passwort"
+
+#: ../src/Controller/AuthController.php:213
+msgid "sent.email.delete.account"
+msgstr ""
+"Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
+"das Benutzerkonto gelöscht werden kann."
+
+#: ../src/Controller/RoleController.php:48
+msgid "edit.success"
+msgstr "Bearbeiten erfolgreich"
+
+#: ../src/Controller/RoleController.php:51
+msgid "edit.failed"
+msgstr "Bearbeiten fehlgeschlagen"
+
+#: ../src/Form/ChangePasswordForm.php:20
+msgid "old.password"
+msgstr "Altes Passwort"
+
+#: ../src/Form/ChangePasswordForm.php:26 ../src/Form/LoginForm.php:24
+#: ../src/Form/RegisterForm.php:33
 msgid "password"
 msgstr "Passwort"
+
+#: ../src/Form/ChangePasswordForm.php:31 ../src/Form/RegisterForm.php:38
+msgid "repeat.password"
+msgstr "Passwort wiederholen"
+
+#: ../src/Form/ChangePasswordForm.php:45 ../src/Form/RegisterForm.php:52
+#: ../src/Form/SpecifyMailForm.php:33
+msgid "enter.text.from.the.picture"
+msgstr "Gib den Text aus dem Bild ein"
+
+#: ../src/Form/ChangePasswordForm.php:50
+#: ../src/Form/PermissionAssignmentForm.php:58 ../src/Form/RoleForm.php:30
+#: ../src/Form/UserForm.php:36
+msgid "save"
+msgstr "Speichern"
+
+#: ../src/Form/LoginForm.php:19 ../src/Form/RegisterForm.php:22
+#: ../src/Form/UserForm.php:19
+#: ../view/zend-bricks/bricks-user/user/list.phtml:5
+msgid "username"
+msgstr "Benutzername"
 
 #: ../src/Form/LoginForm.php:29
 msgid "login"
 msgstr "Login"
 
-#: ../src/Form/RegisterForm.php:28
+#: ../src/Form/RegisterForm.php:28 ../src/Form/SpecifyMailForm.php:19
+#: ../src/Form/UserForm.php:25
+#: ../view/zend-bricks/bricks-user/user/list.phtml:7
 msgid "email"
 msgstr "Email"
 
-#: ../src/Form/RegisterForm.php:38
-msgid "repeat.password"
-msgstr "Passwort wiederholen"
-
-#: ../src/Form/RegisterForm.php:49
-msgid "enter.text.from.the.picture"
-msgstr "Gib den Text aus dem Bild ein"
-
-#: ../src/Form/RegisterForm.php:54
+#: ../src/Form/RegisterForm.php:57
 msgid "accept.terms.of.gtc"
 msgstr "AGB akzeptieren"
 
-#: ../src/Form/RegisterForm.php:60
+#: ../src/Form/RegisterForm.php:63
 msgid "register"
 msgstr "Registrieren"
+
+#: ../src/Form/RoleForm.php:18
+msgid "name"
+msgstr "Name"
+
+#: ../src/Form/RoleForm.php:23
+msgid "parent"
+msgstr "Übergeordnet"
+
+#: ../src/Form/SelfDeleteForm.php:18
+msgid "confirm.self.delete"
+msgstr "Löschung des eigenen Benutzerkontos bestätigen"
+
+#: ../src/Form/SelfDeleteForm.php:23
+msgid "delete.account"
+msgstr "Benutzerkonto löschen"
+
+#: ../src/Form/SpecifyMailForm.php:38
+msgid "send"
+msgstr "Senden"
+
+#: ../src/Form/UserForm.php:30
+#: ../view/zend-bricks/bricks-user/role/list.phtml:8
+#: ../view/zend-bricks/bricks-user/user/list.phtml:6
+msgid "role"
+msgstr "Rolle"
+
+#: ../src/Model/UserMailModel.php:14
+#, php-format
+msgid "confirm.registration.at.%s"
+msgstr "Registrierung auf %s bestätigen"
+
+#: ../src/Model/UserMailModel.php:31
+#, php-format
+msgid "forgot.password.at.%s"
+msgstr "Passwort auf %s vergessen"
+
+#: ../src/Model/UserMailModel.php:48
+#, php-format
+msgid "confirm.account.deletion.at.%s"
+msgstr "Benutzerkonto Löschung auf %s bestätigen"
+
+#: ../view/mail/confirm-account-deletion.phtml:1
+msgid "confirm.account.deletion"
+msgstr "Benutzerkonto Löschung bestätigen"
+
+#: ../view/mail/confirm-account-deletion.phtml:2
+#, php-format
+msgid "delete.account.%s.at.%s.click.%s.to.confirm.deletion"
+msgstr ""
+"Die Löschung des Benutzerkontos %s auf %s wurde angefordert. Klicke %s um "
+"das Benutzerkonto unwiderruflich zu löschen!"
+
+#: ../view/mail/confirm-account-deletion.phtml:2
+#: ../view/mail/confirm-registration.phtml:2
+#: ../view/mail/forgot-password.phtml:2
+msgid "here"
+msgstr "hier"
+
+#: ../view/mail/confirm-registration.phtml:1
+msgid "confirm.registration"
+msgstr "Registrierung bestätigen"
+
+#: ../view/mail/confirm-registration.phtml:2
+#, php-format
+msgid "registered.as.%s.at.%s.click.%s.to.confirm.registration"
+msgstr ""
+"Du hast dich als %s auf %s registriert. Klicke %s um das Benutzerkonto zu "
+"aktivieren!"
+
+#: ../view/mail/forgot-password.phtml:1
+#: ../view/zend-bricks/bricks-user/auth/login.phtml:12
+msgid "forgot.password"
+msgstr "Passwort vergessen"
+
+#: ../view/mail/forgot-password.phtml:2
+#, php-format
+msgid "used.forgot.password.as.%s.at.%s.click.%s.to.set.new.password"
+msgstr ""
+"Für das Benutzerkonto %s auf %s wurde die \"Passwort vergessen\" Funktion "
+"aufgerufen. Klicke %s um dein neues Passwort festzulegen!"
+
+#: ../view/zend-bricks/bricks-user/role/create.phtml:1
+msgid "create.new.role"
+msgstr "Neue Rolle erstellen"
+
+#: ../view/zend-bricks/bricks-user/role/delete.phtml:1
+msgid "delete.role"
+msgstr "Rolle löschen"
+
+#: ../view/zend-bricks/bricks-user/role/edit.phtml:1
+msgid "edit.role"
+msgstr "Rolle bearbeiten"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:2
+msgid "add.role"
+msgstr "Rolle erstellen"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:7
+#: ../view/zend-bricks/bricks-user/user/list.phtml:4
+msgid "id"
+msgstr "ID"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:9
+msgid "parent.roles"
+msgstr "Eltern-Rolle"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:16
+#: ../view/zend-bricks/bricks-user/user/list.phtml:14
+msgid "no.results"
+msgstr "Keine Ergebnisse"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:25
+msgid "edit"
+msgstr "Bearbeiten"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:28
+msgid "assign.permissions"
+msgstr "Berechtigungen zuweisen"
+
+#: ../view/zend-bricks/bricks-user/role/list.phtml:31
+msgid "delete"
+msgstr "Löschen"
+
+#: ../view/zend-bricks/bricks-user/role/permission-assignment.phtml:1
+msgid "permission.assignment"
+msgstr "Berechtigung Zuweisung"
+
+#: ../view/zend-bricks/bricks-user/user/delete.phtml:1
+msgid "delete.user"
+msgstr "Benutzer löschen"
+
+#: ../view/zend-bricks/bricks-user/user/edit.phtml:1
+msgid "edit.user"
+msgstr "Benutzer bearbeiten"

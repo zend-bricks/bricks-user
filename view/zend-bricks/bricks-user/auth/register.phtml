@@ -1,3 +1,25 @@
 <div class="row">
-    <?= $this->form($form) ?>
+    <?= $this->form()->openTag($form) ?>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('username')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('email')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('password')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('password2')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('registerCaptcha')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('gtcAccept'), Zend\Form\View\Helper\FormRow::LABEL_APPEND) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formElement($form->get('register')) ?>
+        </div>
+    <?= $this->form()->closeTag() ?>
 </div>

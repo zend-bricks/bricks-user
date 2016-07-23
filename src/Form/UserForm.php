@@ -34,7 +34,7 @@ class UserForm extends Form
         
         $submit = new Submit('save');
         $submit->setValue('save');
-        $submit->setAttribute('class', 'btn btn-default');
+        $submit->setAttribute('class', 'btn btn-primary');
         $this->add($submit);
     }
 }

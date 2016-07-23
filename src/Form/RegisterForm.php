@@ -39,7 +39,7 @@ class RegisterForm extends Form
         $password2->setAttribute('class', 'form-control');
         $this->add($password2);
         
-        $captcha = new Captcha('register_captcha');
+        $captcha = new Captcha('registerCaptcha');
         $imageAdapter = new Image([
             'font' => __DIR__ . '/../../fonts/arial.ttf'
         ]);
@@ -53,7 +53,7 @@ class RegisterForm extends Form
         $captcha->setAttribute('class', 'form-control');
         $this->add($captcha);
         
-        $agb = new Checkbox('agbaccept');
+        $agb = new Checkbox('gtcAccept');
         $agb->setLabel('accept.terms.of.gtc');
         $agb->setAttribute('class', 'form-control');
         $agb->setLabelAttributes(['class' => 'checkboxLabel']);
@@ -61,7 +61,7 @@ class RegisterForm extends Form
         
         $submit = new Submit('register');
         $submit->setValue('register');
-        $submit->setAttribute('class', 'btn btn-default');
+        $submit->setAttribute('class', 'btn btn-primary');
         $this->add($submit);
     }
 }

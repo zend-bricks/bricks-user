@@ -25,6 +25,25 @@ return [
                     'order' => 200
                 ],
             ]
+        ],
+        'admin' => [
+            'label' => 'admin',
+            'route' => 'home',
+            'order' => 700,
+            'pages' => [
+                [
+                    'label' => 'user',
+                    'route' => 'user/list',
+                    'resource' => 'user/list',
+                    'order' => 100
+                ],
+                [
+                    'label' => 'role',
+                    'route' => 'role/list',
+                    'resource' => 'role/list',
+                    'order' => 200
+                ],
+            ]
         ]
     ]
 ];

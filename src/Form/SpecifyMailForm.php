@@ -36,7 +36,7 @@ class SpecifyMailForm extends Form
         
         $submit = new Submit('send');
         $submit->setValue('send');
-        $submit->setAttribute('class', 'btn btn-default');
+        $submit->setAttribute('class', 'btn btn-primary');
         $this->add($submit);
     }
 }

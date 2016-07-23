@@ -1,4 +1,12 @@
 <div class="row">
-    <?= $this->form($form) ?>
+    <?= $this->form()->openTag($form) ?>
+        <div>
+            <?= $this->formRow($form->get('username')) ?>
+        </div>
+        <div>
+            <?= $this->formRow($form->get('password')) ?>
+        </div>
+        <?= $this->formElement($form->get('login')) ?>
+    <?= $this->form()->closeTag() ?>
 </div>
 <a href="<?= $this->url('auth/forgotPassword') ?>"><?= $this->translate('forgot.password') ?></a>
