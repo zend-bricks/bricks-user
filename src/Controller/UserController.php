@@ -15,7 +15,8 @@ class UserController extends CrudController
 {
     protected $api;
 
-    public function __construct(UserApiInterface $api) {
+    public function __construct(UserApiInterface $api)
+    {
         $this->api = $api;
     }
     

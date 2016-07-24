@@ -7,6 +7,7 @@ use Zend\Router\Http\Segment;
 use ZendBricks\BricksUser\Controller\AuthController;
 use ZendBricks\BricksUser\Controller\RoleController;
 use ZendBricks\BricksUser\Controller\UserController;
+use ZendBricks\BricksUser\Controller\ProfileController;
 
 return [
     'router_class' => \Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class,
@@ -210,6 +211,53 @@ return [
                         'route' => '/delete/:id',
                         'defaults' => [
                             'action' => 'delete',
+                        ],
+                    ],
+                ]
+            ]
+        ],
+        'profile' => [
+            'type' => Literal::class,
+            'options' => [
+                'route' => '/profile',
+                'defaults' => [
+                    'controller' => ProfileController::class
+                ]
+            ],
+            'child_routes' => [
+                'show' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/show[/:id]',
+                        'defaults' => [
+                            'action' => 'show',
+                        ],
+                    ],
+                ],
+                'edit' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/edit/:id',
+                        'defaults' => [
+                            'action' => 'edit',
+                        ],
+                    ],
+                ],
+                'settings' => [
+                    'type' => Literal::class,
+                    'options' => [
+                        'route' => '/settings',
+                        'defaults' => [
+                            'action' => 'settings',
+                        ],
+                    ],
+                ],
+                'manageOptions' => [
+                    'type' => Literal::class,
+                    'options' => [
+                        'route' => '/manage-options',
+                        'defaults' => [
+                            'action' => 'manageOptions',
                         ],
                     ],
                 ]

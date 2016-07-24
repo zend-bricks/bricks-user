@@ -7,22 +7,28 @@ return [
             'order' => 800,
             'pages' => [
                 [
+                    'label' => 'profile',
+                    'route' => 'profile/show',
+                    'resource' => 'profile/show',
+                    'order' => 100
+                ],
+                [
                     'label' => 'login',
                     'route' => 'auth/login',
                     'resource' => 'auth/login',
-                    'order' => 100
+                    'order' => 800
                 ],
                 [
                     'label' => 'register',
                     'route' => 'auth/register',
                     'resource' => 'auth/register',
-                    'order' => 200
+                    'order' => 900
                 ],
                 [
                     'label' => 'logout',
                     'route' => 'auth/logout',
                     'resource' => 'auth/logout',
-                    'order' => 200
+                    'order' => 900
                 ],
             ]
         ],

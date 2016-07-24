@@ -24,7 +24,8 @@ class AuthController extends AbstractActionController
     protected $mailModel;
     protected $projectName;
 
-    public function __construct(UserApiInterface $api, AuthenticationService $authService, UserMailModel $mailModel, $projectName) {
+    public function __construct(UserApiInterface $api, AuthenticationService $authService, UserMailModel $mailModel, $projectName)
+    {
         $this->api = $api;
         $this->authService = $authService;
         $this->mailModel = $mailModel;

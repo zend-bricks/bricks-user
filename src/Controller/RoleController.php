@@ -20,7 +20,8 @@ class RoleController extends CrudController
     protected $acl;
     protected $aclCache;
 
-    public function __construct(UserApiInterface $api, Acl $acl, StorageInterface $aclCache) {
+    public function __construct(UserApiInterface $api, Acl $acl, StorageInterface $aclCache)
+    {
         $this->api = $api;
         $this->acl = $acl;
         $this->aclCache = $aclCache;
