@@ -69,7 +69,7 @@ class RoleController extends CrudController
     protected function getListPaginator()
     {
         $paginator = new Paginator(new RolePaginatorAdapter($this->api));
-        $paginator->setItemCountPerPage(20);
+        $paginator->setItemCountPerPage(self::ITEMS_PER_PAGE);
         return $paginator;
     }
     

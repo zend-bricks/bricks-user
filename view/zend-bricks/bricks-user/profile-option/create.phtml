@@ -1,0 +1,14 @@
+<h1><?= $this->translate('create.new.profile.option') ?></h1>
+<div class="row">
+    <?= $this->form()->openTag($form) ?>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('name')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formRow($form->get('inputType')) ?>
+        </div>
+        <div class="col-xs-12">
+            <?= $this->formElement($form->get('save')) ?>
+        </div>
+    <?= $this->form()->closeTag() ?>
+</div>

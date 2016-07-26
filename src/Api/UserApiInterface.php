@@ -79,12 +79,12 @@ interface UserApiInterface {
     public function countUsers();
     
     /**
-     * Get $count users with $offset
+     * Get $itemCountPerPage users with $offset
      * 
      * @param int $offset
-     * @param int $count
+     * @param int $itemCountPerPage
      */
-    public function getUsers($offset, $count);
+    public function getUsers($offset, $itemCountPerPage);
     
     /**
      * @param array $data
@@ -165,10 +165,10 @@ interface UserApiInterface {
     public function countRoles();
     
     /**
-     * Get $count roles with $offset
+     * Get $itemCountPerPage roles with $offset
      * 
      * @param int $offset
-     * @param int $count
+     * @param int $itemCountPerPage
      */
     public function getRoles($offset, $itemCountPerPage);
     
@@ -299,6 +299,19 @@ interface UserApiInterface {
      * @param int|string $userId
      */
     public function deleteDeleteToken($userId);
+    
+    /**
+     * @return array options for profile settings
+     */
+    public function getProfileOptions($offset, $itemCountPerPage);
+    
+    public function saveProfileOption($data, $id = null);
+    
+    public function getProfileOptionData($id);
+    
+    public function deleteProfileOption($id);
+    
+    public function countProfileOptions();
     
     /**
      * Event that is triggered when a new role is assigned to a user

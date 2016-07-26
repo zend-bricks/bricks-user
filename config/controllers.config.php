@@ -9,6 +9,7 @@ return [
         Controller\RoleController::class => Controller\RoleControllerFactory::class,
         Controller\UserController::class => Controller\UserControllerFactory::class,
         Controller\ProfileController::class => Controller\ProfileControllerFactory::class,
+        Controller\ProfileOptionController::class => Controller\ProfileOptionControllerFactory::class,
     ],
 ];
 

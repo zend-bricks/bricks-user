@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bricks\n"
-"POT-Creation-Date: 2016-07-22 17:21+0200\n"
-"PO-Revision-Date: 2016-07-22 17:22+0200\n"
+"POT-Creation-Date: 2016-07-25 20:02+0200\n"
+"PO-Revision-Date: 2016-07-25 20:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -16,75 +16,75 @@ msgstr ""
 "addInfoMessage;addWarningMessage;setLabel;setValue\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../src/Controller/AuthController.php:51
+#: ../src/Controller/AuthController.php:52
 msgid "user.not.active"
 msgstr "Benutzer nicht aktiv"
 
-#: ../src/Controller/AuthController.php:54
+#: ../src/Controller/AuthController.php:55
 msgid "login.failed"
 msgstr "Login fehlgeschlagen"
 
-#: ../src/Controller/AuthController.php:77
+#: ../src/Controller/AuthController.php:78
 msgid "username.in.use"
 msgstr "Benutzername wird bereits verwendet"
 
-#: ../src/Controller/AuthController.php:79
+#: ../src/Controller/AuthController.php:80
 msgid "email.in.use"
 msgstr "Email wird bereits verwendet"
 
-#: ../src/Controller/AuthController.php:103
+#: ../src/Controller/AuthController.php:104
 msgid "user.activated"
 msgstr "Benutzer wurde aktiviert"
 
-#: ../src/Controller/AuthController.php:105
+#: ../src/Controller/AuthController.php:106
 msgid "user.not.activated"
 msgstr "Benutzer wurde nicht aktiviert"
 
-#: ../src/Controller/AuthController.php:122
+#: ../src/Controller/AuthController.php:123
 msgid "resent.mail.if.exists"
 msgstr ""
 "Falls die angegebene Email-Adresse verwendet wird haben wir eine neue "
 "Bestätigungs-Mail gesendet"
 
-#: ../src/Controller/AuthController.php:144
+#: ../src/Controller/AuthController.php:145
 msgid "sent.email.change.password"
 msgstr ""
 "Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
 "ein neues Passwort festgelegt werden kann."
 
-#: ../src/Controller/AuthController.php:147
+#: ../src/Controller/AuthController.php:148
 msgid "email.not.in.use"
 msgstr "Email nicht bekannt"
 
-#: ../src/Controller/AuthController.php:164
-#: ../src/Controller/AuthController.php:228
+#: ../src/Controller/AuthController.php:165
+#: ../src/Controller/AuthController.php:229
 msgid "invalid.token"
 msgstr "Ungültiger Token"
 
-#: ../src/Controller/AuthController.php:168
+#: ../src/Controller/AuthController.php:169
 msgid "can.not.change.password.as.guest"
 msgstr "Du kannst dein Passwort nicht ändern, da du Gast bist."
 
-#: ../src/Controller/AuthController.php:179
-#: ../src/Controller/AuthController.php:187
+#: ../src/Controller/AuthController.php:180
+#: ../src/Controller/AuthController.php:188
 msgid "password.changed"
 msgstr "Passwort geändert"
 
-#: ../src/Controller/AuthController.php:190
+#: ../src/Controller/AuthController.php:191
 msgid "invalid.password"
 msgstr "Ungültiges Passwort"
 
-#: ../src/Controller/AuthController.php:213
+#: ../src/Controller/AuthController.php:214
 msgid "sent.email.delete.account"
 msgstr ""
 "Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
 "das Benutzerkonto gelöscht werden kann."
 
-#: ../src/Controller/RoleController.php:48
+#: ../src/Controller/RoleController.php:49
 msgid "edit.success"
 msgstr "Bearbeiten erfolgreich"
 
-#: ../src/Controller/RoleController.php:51
+#: ../src/Controller/RoleController.php:52
 msgid "edit.failed"
 msgstr "Bearbeiten fehlgeschlagen"
 
@@ -107,7 +107,8 @@ msgid "enter.text.from.the.picture"
 msgstr "Gib den Text aus dem Bild ein"
 
 #: ../src/Form/ChangePasswordForm.php:50
-#: ../src/Form/PermissionAssignmentForm.php:58 ../src/Form/RoleForm.php:30
+#: ../src/Form/PermissionAssignmentForm.php:58
+#: ../src/Form/ProfileOptionsForm.php:23 ../src/Form/RoleForm.php:30
 #: ../src/Form/UserForm.php:36
 msgid "save"
 msgstr "Speichern"
@@ -121,6 +122,10 @@ msgstr "Benutzername"
 #: ../src/Form/LoginForm.php:29
 msgid "login"
 msgstr "Login"
+
+#: ../src/Form/ProfileOptionsForm.php:18
+msgid "profile.options"
+msgstr "Profileinstellungen"
 
 #: ../src/Form/RegisterForm.php:28 ../src/Form/SpecifyMailForm.php:19
 #: ../src/Form/UserForm.php:25
@@ -216,6 +221,15 @@ msgid "used.forgot.password.as.%s.at.%s.click.%s.to.set.new.password"
 msgstr ""
 "Für das Benutzerkonto %s auf %s wurde die \"Passwort vergessen\" Funktion "
 "aufgerufen. Klicke %s um dein neues Passwort festzulegen!"
+
+#: ../view/zend-bricks/bricks-user/profile/manage-options.phtml:3
+msgid "manage.profile.options"
+msgstr "Profil-Optionen bearbeiten"
+
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:1
+#, php-format
+msgid "profile.of.%s"
+msgstr "Profil von %s"
 
 #: ../view/zend-bricks/bricks-user/role/create.phtml:1
 msgid "create.new.role"

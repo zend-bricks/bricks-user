@@ -8,6 +8,7 @@ use ZendBricks\BricksUser\Controller\AuthController;
 use ZendBricks\BricksUser\Controller\RoleController;
 use ZendBricks\BricksUser\Controller\UserController;
 use ZendBricks\BricksUser\Controller\ProfileController;
+use ZendBricks\BricksUser\Controller\ProfileOptionController;
 
 return [
     'router_class' => \Zend\Mvc\I18n\Router\TranslatorAwareTreeRouteStack::class,
@@ -243,15 +244,6 @@ return [
                         ],
                     ],
                 ],
-                'settings' => [
-                    'type' => Literal::class,
-                    'options' => [
-                        'route' => '/settings',
-                        'defaults' => [
-                            'action' => 'settings',
-                        ],
-                    ],
-                ],
                 'manageOptions' => [
                     'type' => Literal::class,
                     'options' => [
@@ -261,6 +253,53 @@ return [
                         ],
                     ],
                 ]
+            ]
+        ],
+        'profileoption' => [
+            'type' => Literal::class,
+            'options' => [
+                'route' => '/profile-option',
+                'defaults' => [
+                    'controller' => ProfileOptionController::class
+                ]
+            ],
+            'child_routes' => [
+                'list' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/list[/:page]',
+                        'defaults' => [
+                            'action' => 'list',
+                        ],
+                    ],
+                ],
+                'create' => [
+                    'type' => Literal::class,
+                    'options' => [
+                        'route' => '/create',
+                        'defaults' => [
+                            'action' => 'create',
+                        ],
+                    ],
+                ],
+                'edit' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/edit/:id',
+                        'defaults' => [
+                            'action' => 'edit',
+                        ],
+                    ],
+                ],
+                'delete' => [
+                    'type' => Segment::class,
+                    'options' => [
+                        'route' => '/delete/:id',
+                        'defaults' => [
+                            'action' => 'delete',
+                        ],
+                    ],
+                ],
             ]
         ]
     ]
