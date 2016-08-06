@@ -313,6 +313,10 @@ interface UserApiInterface {
     
     public function countProfileOptions();
     
+    public function getProfileSettings($userId);
+    
+    public function setProfileSettings($userId, array $data);
+    
     /**
      * Event that is triggered when a new role is assigned to a user
      * This event could be used for cache-control, info mails ...

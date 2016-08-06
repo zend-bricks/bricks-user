@@ -1,2 +1,23 @@
-<h1><?= $this->translate('profile.of.%s') ?></h1>
-
+<h1><?= sprintf($this->translate('profile.of.%s'), $displayName) ?></h1>
+<a class="btn btn-xs btn-default" href="<?= $this->url('profileoption/list') ?>">
+    <?= $this->translate('manage.profileoptions') ?>
+</a>
+<a class="btn btn-xs btn-default" href="<?= $this->url('profile/edit', ['id' => $userId]) ?>">
+    <?= $this->translate('edit.profile') ?>
+</a>
+<a class="btn btn-xs btn-default" href="<?= $this->url('auth/changePassword') ?>">
+    <?= $this->translate('change.password') ?>
+</a>
+<a class="btn btn-xs btn-default" href="<?= $this->url('auth/selfDelete') ?>">
+    <?= $this->translate('self.delete') ?>
+</a>
+<table class="table">
+    <tbody>
+        <?php foreach ($profileData as $profileField): ?>
+            <tr>
+                <td><?= $profileField['name'] ?></td>
+                <td><?= $profileField['value'] ?></td>
+            </tr>
+        <?php endforeach ?>
+    </tbody>
+</table>

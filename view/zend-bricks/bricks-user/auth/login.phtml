@@ -9,4 +9,5 @@
         <?= $this->formElement($form->get('login')) ?>
     <?= $this->form()->closeTag() ?>
 </div>
-<a href="<?= $this->url('auth/forgotPassword') ?>"><?= $this->translate('forgot.password') ?></a>
+<a class="btn btn-xs btn-default" href="<?= $this->url('auth/forgotPassword') ?>"><?= $this->translate('forgot.password') ?></a>
+<a class="btn btn-xs btn-default" href="<?= $this->url('auth/resendRegisterMail') ?>"><?= $this->translate('resend.register.mail') ?></a>

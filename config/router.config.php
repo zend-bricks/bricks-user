@@ -243,15 +243,6 @@ return [
                             'action' => 'edit',
                         ],
                     ],
-                ],
-                'manageOptions' => [
-                    'type' => Literal::class,
-                    'options' => [
-                        'route' => '/manage-options',
-                        'defaults' => [
-                            'action' => 'manageOptions',
-                        ],
-                    ],
                 ]
             ]
         ],

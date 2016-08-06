@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bricks\n"
-"POT-Creation-Date: 2016-07-25 20:02+0200\n"
-"PO-Revision-Date: 2016-07-25 20:03+0200\n"
+"POT-Creation-Date: 2016-08-06 10:12+0200\n"
+"PO-Revision-Date: 2016-08-06 10:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -107,8 +107,8 @@ msgid "enter.text.from.the.picture"
 msgstr "Gib den Text aus dem Bild ein"
 
 #: ../src/Form/ChangePasswordForm.php:50
-#: ../src/Form/PermissionAssignmentForm.php:58
-#: ../src/Form/ProfileOptionsForm.php:23 ../src/Form/RoleForm.php:30
+#: ../src/Form/PermissionAssignmentForm.php:58 ../src/Form/ProfileForm.php:43
+#: ../src/Form/ProfileOptionForm.php:41 ../src/Form/RoleForm.php:30
 #: ../src/Form/UserForm.php:36
 msgid "save"
 msgstr "Speichern"
@@ -123,9 +123,15 @@ msgstr "Benutzername"
 msgid "login"
 msgstr "Login"
 
-#: ../src/Form/ProfileOptionsForm.php:18
-msgid "profile.options"
-msgstr "Profileinstellungen"
+#: ../src/Form/ProfileOptionForm.php:24 ../src/Form/RoleForm.php:18
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:8
+msgid "name"
+msgstr "Name"
+
+#: ../src/Form/ProfileOptionForm.php:30
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:9
+msgid "input.type"
+msgstr "Eingabe-Typ"
 
 #: ../src/Form/RegisterForm.php:28 ../src/Form/SpecifyMailForm.php:19
 #: ../src/Form/UserForm.php:25
@@ -140,10 +146,6 @@ msgstr "AGB akzeptieren"
 #: ../src/Form/RegisterForm.php:63
 msgid "register"
 msgstr "Registrieren"
-
-#: ../src/Form/RoleForm.php:18
-msgid "name"
-msgstr "Name"
 
 #: ../src/Form/RoleForm.php:23
 msgid "parent"
@@ -222,14 +224,69 @@ msgstr ""
 "Für das Benutzerkonto %s auf %s wurde die \"Passwort vergessen\" Funktion "
 "aufgerufen. Klicke %s um dein neues Passwort festzulegen!"
 
-#: ../view/zend-bricks/bricks-user/profile/manage-options.phtml:3
-msgid "manage.profile.options"
-msgstr "Profil-Optionen bearbeiten"
+#: ../view/zend-bricks/bricks-user/auth/login.phtml:13
+msgid "resend.register.mail"
+msgstr "Registrierungs-Mail noch einmal senden"
+
+#: ../view/zend-bricks/bricks-user/profile-option/create.phtml:1
+msgid "create.new.profile.option"
+msgstr "Neue Profil-Optionen erstellen"
+
+#: ../view/zend-bricks/bricks-user/profile-option/delete.phtml:1
+msgid "delete.profile.option"
+msgstr "Profil-Option löschen"
+
+#: ../view/zend-bricks/bricks-user/profile-option/edit.phtml:1
+msgid "edit.profile.option"
+msgstr "Profil-Option bearbeiten"
+
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:2
+msgid "add.profileoption"
+msgstr "Profil-Option erstellen"
+
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:7
+#: ../view/zend-bricks/bricks-user/role/list.phtml:7
+#: ../view/zend-bricks/bricks-user/user/list.phtml:4
+msgid "id"
+msgstr "ID"
+
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:16
+#: ../view/zend-bricks/bricks-user/role/list.phtml:16
+#: ../view/zend-bricks/bricks-user/user/list.phtml:14
+msgid "no.results"
+msgstr "Keine Ergebnisse"
+
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:25
+#: ../view/zend-bricks/bricks-user/role/list.phtml:25
+msgid "edit"
+msgstr "Bearbeiten"
+
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:28
+#: ../view/zend-bricks/bricks-user/role/list.phtml:31
+msgid "delete"
+msgstr "Löschen"
+
+#: ../view/zend-bricks/bricks-user/profile/edit.phtml:1
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:6
+msgid "edit.profile"
+msgstr "Profil bearbeiten"
 
 #: ../view/zend-bricks/bricks-user/profile/show.phtml:1
 #, php-format
 msgid "profile.of.%s"
 msgstr "Profil von %s"
+
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:3
+msgid "manage.profileoptions"
+msgstr "Profil-Optionen verwalten"
+
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:9
+msgid "change.password"
+msgstr "Passwort ändern"
+
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:12
+msgid "self.delete"
+msgstr "Benutzerkonto löschen"
 
 #: ../view/zend-bricks/bricks-user/role/create.phtml:1
 msgid "create.new.role"
@@ -247,31 +304,13 @@ msgstr "Rolle bearbeiten"
 msgid "add.role"
 msgstr "Rolle erstellen"
 
-#: ../view/zend-bricks/bricks-user/role/list.phtml:7
-#: ../view/zend-bricks/bricks-user/user/list.phtml:4
-msgid "id"
-msgstr "ID"
-
 #: ../view/zend-bricks/bricks-user/role/list.phtml:9
 msgid "parent.roles"
 msgstr "Eltern-Rolle"
 
-#: ../view/zend-bricks/bricks-user/role/list.phtml:16
-#: ../view/zend-bricks/bricks-user/user/list.phtml:14
-msgid "no.results"
-msgstr "Keine Ergebnisse"
-
-#: ../view/zend-bricks/bricks-user/role/list.phtml:25
-msgid "edit"
-msgstr "Bearbeiten"
-
 #: ../view/zend-bricks/bricks-user/role/list.phtml:28
 msgid "assign.permissions"
 msgstr "Berechtigungen zuweisen"
-
-#: ../view/zend-bricks/bricks-user/role/list.phtml:31
-msgid "delete"
-msgstr "Löschen"
 
 #: ../view/zend-bricks/bricks-user/role/permission-assignment.phtml:1
 msgid "permission.assignment"
@@ -284,3 +323,9 @@ msgstr "Benutzer löschen"
 #: ../view/zend-bricks/bricks-user/user/edit.phtml:1
 msgid "edit.user"
 msgstr "Benutzer bearbeiten"
+
+#~ msgid "profile.options"
+#~ msgstr "Profileinstellungen"
+
+#~ msgid "manage.profile.options"
+#~ msgstr "Profil-Optionen bearbeiten"

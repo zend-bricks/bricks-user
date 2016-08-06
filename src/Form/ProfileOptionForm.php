@@ -12,6 +12,7 @@ class ProfileOptionForm extends Form
     const INPUT_TYPE_TEXT = 'text';
     const INPUT_TYPE_TEXTAREA = 'textarea';
     const INPUT_TYPE_DATE = 'date';
+    const INPUT_TYPE_TIME = 'time';
     const INPUT_TYPE_DATETIME = 'datetime';
     
     public function __construct() {
@@ -31,6 +32,7 @@ class ProfileOptionForm extends Form
             self::INPUT_TYPE_TEXT,
             self::INPUT_TYPE_TEXTAREA,
             self::INPUT_TYPE_DATE,
+            self::INPUT_TYPE_TIME,
             self::INPUT_TYPE_DATETIME
         ]);
         $this->add($type);
