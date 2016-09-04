@@ -22,7 +22,7 @@ class ConsoleController extends AbstractConsoleController
         $userApi = $this->container->get(UserApiInterface::SERVICE_NAME);
         $existingPermissions = $userApi->getPermissions();
         
-        $config = $this->container->get('Config');
+        $config = $this->container->get('config');
         $routesExtractor = new RoutesExtractor($config['router']);
         $routes = $routesExtractor->getRoutes();
         

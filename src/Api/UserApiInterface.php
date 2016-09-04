@@ -88,14 +88,14 @@ interface UserApiInterface {
     
     /**
      * @param array $data
-     * @param int|user $id
+     * @param int|user $userId
      */
-    public function saveUser($data, $id = null);
+    public function saveUser($data, $userId = null);
     
     /**
-     * @param int|string $id
+     * @param int|string $userId
      */
-    public function getUserData($id);
+    public function getUserData($userId);
 
     /**
      * @param int|string $userId
@@ -235,11 +235,11 @@ interface UserApiInterface {
      * Add an unactivated user
      * 
      * @param string $username
-     * @param string $mail
+     * @param string $email
      * @param string $password
      * @return int|string $userId
      */
-    public function registerUser($username, $mail, $password);
+    public function registerUser($username, $email, $password);
     
     /**
      * Delete all old register tokens of the user and save the new given $token

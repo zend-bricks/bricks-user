@@ -37,6 +37,7 @@ class RoleController extends CrudController
             $form->setData($this->getRequest()->getPost());
             if ($form->isValid()) {
                 $formData = $form->getData();
+                unset($formData['save']);
                 $nextPermissions = [];
                 foreach ($formData as $permission => $checked) {
                     if ($checked) {
