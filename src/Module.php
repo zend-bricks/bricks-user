@@ -78,4 +78,10 @@ class Module
         
         return $role;
     }
+    
+    public function getConsoleUsage($console){
+        return [
+            'add-permissions' => 'check routing config and add all new routes as new permission',
+        ];
+    }
 }
