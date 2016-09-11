@@ -9,7 +9,7 @@ use Zend\Form\Element\Submit;
 use Zend\Form\Element\Email;
 use Zend\Form\Element\Checkbox;
 use Zend\Form\Element\Captcha;
-use Zend\Captcha\Image;
+use ZendBricks\BricksCommon\Model\Image;
 
 class RegisterForm extends Form
 {
