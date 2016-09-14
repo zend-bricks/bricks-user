@@ -27,6 +27,7 @@ class ProfileController extends AbstractActionController
         $profileData = $this->api->getProfileSettings($id);
 
         return [
+            'identity' => $this->authService->getIdentity(),
             'userId' => $id,
             'displayName' => $this->api->getUsernameByUserId($id),
             'profileData' => $profileData

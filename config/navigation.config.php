@@ -9,7 +9,7 @@ return [
                 [
                     'label' => 'profile',
                     'route' => 'profile/show',
-                    'resource' => 'profile/show',
+                    'resource' => 'auth/logout',    //fix that guest has a profile menu entry
                     'order' => 100
                 ],
                 [
