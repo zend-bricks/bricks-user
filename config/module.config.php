@@ -8,5 +8,6 @@ return [
     'router' => require 'router.config.php',
     'service_manager' => require 'service_manager.config.php',
     'translator' => require 'translator.config.php',
+    'view_helpers' => require 'view_helpers.config.php',
     'view_manager' => require 'view_manager.config.php',
 ];
