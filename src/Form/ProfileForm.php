@@ -5,6 +5,7 @@ namespace ZendBricks\BricksUser\Form;
 use Zend\Form\Form;
 use Zend\Form\Element\Text;
 use Zend\Form\Element\Textarea;
+use Zend\Form\Element\File;
 use Zend\Form\Element\Submit;
 use ZendBricks\BricksUser\Form\ProfileOptionForm;
 
@@ -30,6 +31,9 @@ class ProfileForm extends Form
                     break;
                 case ProfileOptionForm::INPUT_TYPE_DATETIME:
                     $element = new Text($profileOption['name']);
+                    break;
+                case ProfileOptionForm::INPUT_TYPE_PICTURE_UPLOAD:
+                    $element = new File($profileOption['name']);
                     break;
                 default:
                     break 2;

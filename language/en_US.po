@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bricks\n"
-"POT-Creation-Date: 2016-08-06 10:12+0200\n"
-"PO-Revision-Date: 2016-08-06 10:13+0200\n"
+"POT-Creation-Date: 2016-09-18 08:55+0200\n"
+"PO-Revision-Date: 2016-09-18 08:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de_DE\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: translate;addSuccessMessage;addErrorMessage;"
@@ -18,120 +18,121 @@ msgstr ""
 
 #: ../src/Controller/AuthController.php:52
 msgid "user.not.active"
-msgstr "Benutzer nicht aktiv"
+msgstr "User not active"
 
 #: ../src/Controller/AuthController.php:55
 msgid "login.failed"
-msgstr "Login fehlgeschlagen"
+msgstr "Login failed"
 
 #: ../src/Controller/AuthController.php:78
 msgid "username.in.use"
-msgstr "Benutzername wird bereits verwendet"
+msgstr "Username is already in use"
 
 #: ../src/Controller/AuthController.php:80
 msgid "email.in.use"
-msgstr "Email wird bereits verwendet"
+msgstr "Email is already in use"
 
 #: ../src/Controller/AuthController.php:104
 msgid "user.activated"
-msgstr "Benutzer wurde aktiviert"
+msgstr "User was activated"
 
 #: ../src/Controller/AuthController.php:106
 msgid "user.not.activated"
-msgstr "Benutzer wurde nicht aktiviert"
+msgstr "User was not activated"
 
 #: ../src/Controller/AuthController.php:123
 msgid "resent.mail.if.exists"
-msgstr ""
-"Falls die angegebene Email-Adresse verwendet wird haben wir eine neue "
-"Bestätigungs-Mail gesendet"
+msgstr "We have sent the activation email to the given address"
 
 #: ../src/Controller/AuthController.php:145
 msgid "sent.email.change.password"
-msgstr ""
-"Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
-"ein neues Passwort festgelegt werden kann."
+msgstr "We have sent the password reset email to the given address"
 
 #: ../src/Controller/AuthController.php:148
 msgid "email.not.in.use"
-msgstr "Email nicht bekannt"
+msgstr "Email unknown to the system"
 
 #: ../src/Controller/AuthController.php:165
 #: ../src/Controller/AuthController.php:229
 msgid "invalid.token"
-msgstr "Ungültiger Token"
+msgstr "Invalid token"
 
 #: ../src/Controller/AuthController.php:169
 msgid "can.not.change.password.as.guest"
-msgstr "Du kannst dein Passwort nicht ändern, da du Gast bist."
+msgstr "You can't change your password as guest."
 
 #: ../src/Controller/AuthController.php:180
 #: ../src/Controller/AuthController.php:188
 msgid "password.changed"
-msgstr "Passwort geändert"
+msgstr "Password changed"
 
 #: ../src/Controller/AuthController.php:191
 msgid "invalid.password"
-msgstr "Ungültiges Passwort"
+msgstr "Invalid password"
 
 #: ../src/Controller/AuthController.php:214
 msgid "sent.email.delete.account"
 msgstr ""
-"Wir haben eine Email an die hinterlegte Email-Adresse gesendet, mit welcher "
-"das Benutzerkonto gelöscht werden kann."
+"We have sent the email to delete your account to the email address you used "
+"for registration."
 
-#: ../src/Controller/RoleController.php:49
+#: ../src/Controller/RoleController.php:50
 msgid "edit.success"
-msgstr "Bearbeiten erfolgreich"
+msgstr "Successful edited"
 
-#: ../src/Controller/RoleController.php:52
+#: ../src/Controller/RoleController.php:53
 msgid "edit.failed"
-msgstr "Bearbeiten fehlgeschlagen"
+msgstr "Edit failed"
 
 #: ../src/Form/ChangePasswordForm.php:20
 msgid "old.password"
-msgstr "Altes Passwort"
+msgstr "Old password"
 
 #: ../src/Form/ChangePasswordForm.php:26 ../src/Form/LoginForm.php:24
 #: ../src/Form/RegisterForm.php:33
 msgid "password"
-msgstr "Passwort"
+msgstr "Password"
 
 #: ../src/Form/ChangePasswordForm.php:31 ../src/Form/RegisterForm.php:38
 msgid "repeat.password"
-msgstr "Passwort wiederholen"
+msgstr "Repeat password"
 
 #: ../src/Form/ChangePasswordForm.php:45 ../src/Form/RegisterForm.php:52
 #: ../src/Form/SpecifyMailForm.php:33
 msgid "enter.text.from.the.picture"
-msgstr "Gib den Text aus dem Bild ein"
+msgstr "Enter the text from the picture"
 
 #: ../src/Form/ChangePasswordForm.php:50
-#: ../src/Form/PermissionAssignmentForm.php:58 ../src/Form/ProfileForm.php:43
-#: ../src/Form/ProfileOptionForm.php:41 ../src/Form/RoleForm.php:30
+#: ../src/Form/PermissionAssignmentForm.php:58 ../src/Form/ProfileForm.php:47
+#: ../src/Form/ProfileOptionForm.php:49 ../src/Form/RoleForm.php:30
 #: ../src/Form/UserForm.php:36
 msgid "save"
-msgstr "Speichern"
+msgstr "Save"
 
 #: ../src/Form/LoginForm.php:19 ../src/Form/RegisterForm.php:22
 #: ../src/Form/UserForm.php:19
 #: ../view/zend-bricks/bricks-user/user/list.phtml:5
 msgid "username"
-msgstr "Benutzername"
+msgstr "Username"
 
 #: ../src/Form/LoginForm.php:29
 msgid "login"
 msgstr "Login"
 
-#: ../src/Form/ProfileOptionForm.php:24 ../src/Form/RoleForm.php:18
+#: ../src/Form/ProfileOptionForm.php:25 ../src/Form/RoleForm.php:18
 #: ../view/zend-bricks/bricks-user/profile-option/list.phtml:8
 msgid "name"
 msgstr "Name"
 
-#: ../src/Form/ProfileOptionForm.php:30
+#: ../src/Form/ProfileOptionForm.php:31
 #: ../view/zend-bricks/bricks-user/profile-option/list.phtml:9
 msgid "input.type"
-msgstr "Eingabe-Typ"
+msgstr "Input type"
+
+#: ../src/Form/ProfileOptionForm.php:43
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:10
+msgid "order.priority"
+msgstr "Order priority"
 
 #: ../src/Form/RegisterForm.php:28 ../src/Form/SpecifyMailForm.php:19
 #: ../src/Form/UserForm.php:25
@@ -141,108 +142,104 @@ msgstr "Email"
 
 #: ../src/Form/RegisterForm.php:57
 msgid "accept.terms.of.gtc"
-msgstr "AGB akzeptieren"
+msgstr "Accept gtc"
 
 #: ../src/Form/RegisterForm.php:63
 msgid "register"
-msgstr "Registrieren"
+msgstr "Register"
 
 #: ../src/Form/RoleForm.php:23
 msgid "parent"
-msgstr "Übergeordnet"
+msgstr "Parent"
 
 #: ../src/Form/SelfDeleteForm.php:18
-msgid "confirm.self.delete"
-msgstr "Löschung des eigenen Benutzerkontos bestätigen"
+#: ../view/mail/confirm-account-deletion.phtml:1
+msgid "confirm.account.deletion"
+msgstr "Confirm self deletion"
 
 #: ../src/Form/SelfDeleteForm.php:23
 msgid "delete.account"
-msgstr "Benutzerkonto löschen"
+msgstr "Delete account"
 
 #: ../src/Form/SpecifyMailForm.php:38
 msgid "send"
-msgstr "Senden"
+msgstr "Send"
 
 #: ../src/Form/UserForm.php:30
 #: ../view/zend-bricks/bricks-user/role/list.phtml:8
 #: ../view/zend-bricks/bricks-user/user/list.phtml:6
 msgid "role"
-msgstr "Rolle"
+msgstr "Role"
 
 #: ../src/Model/UserMailModel.php:14
 #, php-format
 msgid "confirm.registration.at.%s"
-msgstr "Registrierung auf %s bestätigen"
+msgstr "Confirm registration at %s"
 
 #: ../src/Model/UserMailModel.php:31
 #, php-format
 msgid "forgot.password.at.%s"
-msgstr "Passwort auf %s vergessen"
+msgstr "Forgot password at %s"
 
 #: ../src/Model/UserMailModel.php:48
 #, php-format
 msgid "confirm.account.deletion.at.%s"
-msgstr "Benutzerkonto Löschung auf %s bestätigen"
-
-#: ../view/mail/confirm-account-deletion.phtml:1
-msgid "confirm.account.deletion"
-msgstr "Benutzerkonto Löschung bestätigen"
+msgstr "Confirm account deletion at %s"
 
 #: ../view/mail/confirm-account-deletion.phtml:2
 #, php-format
 msgid "delete.account.%s.at.%s.click.%s.to.confirm.deletion"
 msgstr ""
-"Die Löschung des Benutzerkontos %s auf %s wurde angefordert. Klicke %s um "
-"das Benutzerkonto unwiderruflich zu löschen!"
+"Deletion of account %s at %s was requested. Click %s to confirm that your "
+"account will be deleted!"
 
 #: ../view/mail/confirm-account-deletion.phtml:2
 #: ../view/mail/confirm-registration.phtml:2
 #: ../view/mail/forgot-password.phtml:2
 msgid "here"
-msgstr "hier"
+msgstr "here"
 
 #: ../view/mail/confirm-registration.phtml:1
 msgid "confirm.registration"
-msgstr "Registrierung bestätigen"
+msgstr "Confirm registration"
 
 #: ../view/mail/confirm-registration.phtml:2
 #, php-format
 msgid "registered.as.%s.at.%s.click.%s.to.confirm.registration"
 msgstr ""
-"Du hast dich als %s auf %s registriert. Klicke %s um das Benutzerkonto zu "
-"aktivieren!"
+"You have registered the account %s at %s. Click %s to activate your account!"
 
 #: ../view/mail/forgot-password.phtml:1
 #: ../view/zend-bricks/bricks-user/auth/login.phtml:12
 msgid "forgot.password"
-msgstr "Passwort vergessen"
+msgstr "Forgot password"
 
 #: ../view/mail/forgot-password.phtml:2
 #, php-format
 msgid "used.forgot.password.as.%s.at.%s.click.%s.to.set.new.password"
 msgstr ""
-"Für das Benutzerkonto %s auf %s wurde die \"Passwort vergessen\" Funktion "
-"aufgerufen. Klicke %s um dein neues Passwort festzulegen!"
+"The \"Forgot password\" feature was used for your account %s at %s. Click %s "
+"to set your new password!"
 
 #: ../view/zend-bricks/bricks-user/auth/login.phtml:13
 msgid "resend.register.mail"
-msgstr "Registrierungs-Mail noch einmal senden"
+msgstr "Resend registration email"
 
 #: ../view/zend-bricks/bricks-user/profile-option/create.phtml:1
 msgid "create.new.profile.option"
-msgstr "Neue Profil-Optionen erstellen"
+msgstr "Create new profile option"
 
 #: ../view/zend-bricks/bricks-user/profile-option/delete.phtml:1
 msgid "delete.profile.option"
-msgstr "Profil-Option löschen"
+msgstr "Delete profile Option"
 
 #: ../view/zend-bricks/bricks-user/profile-option/edit.phtml:1
 msgid "edit.profile.option"
-msgstr "Profil-Option bearbeiten"
+msgstr "Edit profile option"
 
 #: ../view/zend-bricks/bricks-user/profile-option/list.phtml:2
 msgid "add.profileoption"
-msgstr "Profil-Option erstellen"
+msgstr "Add profile option"
 
 #: ../view/zend-bricks/bricks-user/profile-option/list.phtml:7
 #: ../view/zend-bricks/bricks-user/role/list.phtml:7
@@ -250,79 +247,82 @@ msgstr "Profil-Option erstellen"
 msgid "id"
 msgstr "ID"
 
-#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:16
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:17
 #: ../view/zend-bricks/bricks-user/role/list.phtml:16
 #: ../view/zend-bricks/bricks-user/user/list.phtml:14
 msgid "no.results"
-msgstr "Keine Ergebnisse"
+msgstr "No results"
 
-#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:25
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:27
 #: ../view/zend-bricks/bricks-user/role/list.phtml:25
 msgid "edit"
-msgstr "Bearbeiten"
+msgstr "Edit"
 
-#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:28
+#: ../view/zend-bricks/bricks-user/profile-option/list.phtml:30
 #: ../view/zend-bricks/bricks-user/role/list.phtml:31
 msgid "delete"
-msgstr "Löschen"
+msgstr "Delete"
 
 #: ../view/zend-bricks/bricks-user/profile/edit.phtml:1
-#: ../view/zend-bricks/bricks-user/profile/show.phtml:6
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:9
 msgid "edit.profile"
-msgstr "Profil bearbeiten"
+msgstr "Edit profile"
 
 #: ../view/zend-bricks/bricks-user/profile/show.phtml:1
 #, php-format
 msgid "profile.of.%s"
-msgstr "Profil von %s"
+msgstr "Profile of %s"
 
-#: ../view/zend-bricks/bricks-user/profile/show.phtml:3
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:4
 msgid "manage.profileoptions"
-msgstr "Profil-Optionen verwalten"
+msgstr "Manage profile options"
 
-#: ../view/zend-bricks/bricks-user/profile/show.phtml:9
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:14
 msgid "change.password"
-msgstr "Passwort ändern"
+msgstr "Change password"
 
-#: ../view/zend-bricks/bricks-user/profile/show.phtml:12
+#: ../view/zend-bricks/bricks-user/profile/show.phtml:19
 msgid "self.delete"
-msgstr "Benutzerkonto löschen"
+msgstr "Delete account"
 
 #: ../view/zend-bricks/bricks-user/role/create.phtml:1
-msgid "create.new.role"
-msgstr "Neue Rolle erstellen"
+#: ../view/zend-bricks/bricks-user/role/list.phtml:2
+msgid "add.role"
+msgstr "Add role"
 
 #: ../view/zend-bricks/bricks-user/role/delete.phtml:1
 msgid "delete.role"
-msgstr "Rolle löschen"
+msgstr "Delete role"
 
 #: ../view/zend-bricks/bricks-user/role/edit.phtml:1
 msgid "edit.role"
-msgstr "Rolle bearbeiten"
-
-#: ../view/zend-bricks/bricks-user/role/list.phtml:2
-msgid "add.role"
-msgstr "Rolle erstellen"
+msgstr "Edit role"
 
 #: ../view/zend-bricks/bricks-user/role/list.phtml:9
 msgid "parent.roles"
-msgstr "Eltern-Rolle"
+msgstr "Parent roles"
 
 #: ../view/zend-bricks/bricks-user/role/list.phtml:28
 msgid "assign.permissions"
-msgstr "Berechtigungen zuweisen"
+msgstr "Assign permissions"
 
 #: ../view/zend-bricks/bricks-user/role/permission-assignment.phtml:1
 msgid "permission.assignment"
-msgstr "Berechtigung Zuweisung"
+msgstr "Permission assignment"
 
 #: ../view/zend-bricks/bricks-user/user/delete.phtml:1
 msgid "delete.user"
-msgstr "Benutzer löschen"
+msgstr "Delete user"
 
 #: ../view/zend-bricks/bricks-user/user/edit.phtml:1
 msgid "edit.user"
-msgstr "Benutzer bearbeiten"
+msgstr "Edit user"
+
+#~ msgid "create.new.role"
+#~ msgstr "Create new Role"
+
+#~ msgid "confirm.self.delete"
+#~ msgstr "Löschung des eigenen Benutzerkontos bestätigen"
 
 #~ msgid "profile.options"
 #~ msgstr "Profileinstellungen"

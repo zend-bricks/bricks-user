@@ -15,7 +15,7 @@ class SelfDeleteForm extends Form
         $this->setAttribute('class', 'panel-body');        
         
         $confirm = new Checkbox('confirm');
-        $confirm->setLabel('confirm.self.delete');
+        $confirm->setLabel('confirm.account.deletion');
         $confirm->setAttribute('class', 'checkbox form-control');
         $this->add($confirm);
         
