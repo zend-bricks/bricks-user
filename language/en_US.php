@@ -1,7 +1,7 @@
 <?php
 return [
     'admin' => 'Admin',
-    'profile' => 'Profil',
+    'profile' => 'Profile',
     'logout' => 'Logout',
 ];
 
