@@ -7,18 +7,22 @@ use ZendBricks\BricksUser\Api\UserApiInterface;
 use Zend\Permissions\Acl\Acl;
 use Zend\Authentication\AuthenticationService;
 use ZendBricks\BricksUser\Form\ProfileForm;
+use Zend\Form\Form;
+use Zend\Form\Element\File;
 
 class ProfileController extends AbstractActionController
 {
     protected $api;
     protected $acl;
     protected $authService;
+    protected $config;
 
-    public function __construct(UserApiInterface $api, Acl $acl, AuthenticationService $authService)
+    public function __construct(UserApiInterface $api, Acl $acl, AuthenticationService $authService, array $config)
     {
         $this->api = $api;
         $this->acl = $acl;
         $this->authService = $authService;
+        $this->config = $config;
     }
     
     public function showAction()
@@ -42,12 +46,14 @@ class ProfileController extends AbstractActionController
         foreach ($this->api->getProfileSettings($id) as $profileSetting) {
             $form->get($profileSetting['name'])->setValue($profileSetting['value']);
         }
-        if ($this->getRequest()->isPost()) {
-            $form->setData($this->getRequest()->getPost());
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData(array_merge_recursive(
+                $request->getPost()->toArray(),
+                $request->getFiles()->toArray()
+            ));
             if ($form->isValid()) {
-                $formData = $form->getData();
-                unset($formData['save']);
-                $this->api->setProfileSettings($id, $formData);
+                $this->api->setProfileSettings($id, $this->getPreparedFormData($form));
                 return $this->getProfileRedirect($id);
             }
         }
@@ -59,11 +65,23 @@ class ProfileController extends AbstractActionController
     
     protected function getProfileForm()
     {
-        return new ProfileForm($this->api->getProfileOptions(0, 100));
+        return new ProfileForm($this->api->getProfileOptions(0, 100), $this->config['profile']);
     }
     
     protected function getProfileRedirect($id)
     {
         return $this->redirect()->toRoute('profile/show', ['id' => $id]);
+    }
+    
+    protected function getPreparedFormData(Form $form)
+    {
+        $formData = $form->getData();
+        foreach ($form->getElements() as $element) {
+            if ($element instanceof File) {
+                $formData[$element->getName()] = $formData[$element->getName()]['tmp_name'];
+            }
+        }
+        unset($formData['save']);
+        return $formData;
     }
 }

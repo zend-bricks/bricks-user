@@ -8,10 +8,11 @@ use Zend\Form\Element\Textarea;
 use Zend\Form\Element\File;
 use Zend\Form\Element\Submit;
 use ZendBricks\BricksUser\Form\ProfileOptionForm;
+use Zend\InputFilter\FileInput;
 
 class ProfileForm extends Form
 {
-    public function __construct(array $profileOptions) {
+    public function __construct(array $profileOptions, array $config) {
         parent::__construct();
         $this->setAttribute('method', 'post');
         
@@ -34,6 +35,32 @@ class ProfileForm extends Form
                     break;
                 case ProfileOptionForm::INPUT_TYPE_PICTURE_UPLOAD:
                     $element = new File($profileOption['name']);
+                    $element->prepareElement($this);
+                    if (array_key_exists($profileOption['name'], $config['upload_target'])) {
+                        $uploadTarget = $config['upload_target'][$profileOption['name']];
+                    } else {
+                        $uploadTarget = $config['upload_target']['default'];
+                    }
+                    $this->getInputFilter()->add([
+                        'type' => FileInput::class,
+                        'name' => $profileOption['name'],
+                        'required' => false,
+                        'filters'  => [
+                            [
+                                'name' => 'filerenameupload',
+                                'options' => [
+                                    'target' => $uploadTarget,
+                                    'randomize' => true,
+                                    'use_upload_extension' => true
+                                ]
+                            ]
+                        ],                
+                        'validators' => [
+                            [
+                                'name' => 'fileisimage'
+                            ]
+                        ]
+                    ]);
                     break;
                 default:
                     break 2;

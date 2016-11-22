@@ -15,6 +15,7 @@ class ProfileControllerFactory implements FactoryInterface
         $api = $container->get(UserApiInterface::SERVICE_NAME);
         $acl = $container->get('Acl');
         $authService = $container->get(AuthenticationService::class);
-        return new ProfileController($api, $acl, $authService);
+        $config = $container->get('config');
+        return new ProfileController($api, $acl, $authService, $config);
     }   
 }

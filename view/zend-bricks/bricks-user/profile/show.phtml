@@ -23,8 +23,14 @@
     <tbody>
         <?php foreach ($profileData as $profileField): ?>
             <tr>
-                <td><?= $profileField['name'] ?></td>
-                <td><?= $profileField['value'] ?></td>
+                <td><?= $this->translate($profileField['name']) ?></td>
+                <td>
+                    <?php if ($profileField['inputType'] == 'picupload'): ?>
+                        <img src="<?= substr($profileField['value'], 6) ?>">
+                    <?php else: ?>
+                        <?= $profileField['value'] ?>
+                    <?php endif ?>
+                </td>
             </tr>
         <?php endforeach ?>
     </tbody>

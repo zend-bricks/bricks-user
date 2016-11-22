@@ -5,6 +5,7 @@ return [
     'console' => require 'console.config.php',
     'controllers' => require 'controllers.config.php',
     'navigation' => require 'navigation.config.php',
+    'profile' => require 'profile.config.php',
     'router' => require 'router.config.php',
     'service_manager' => require 'service_manager.config.php',
     'translator' => require 'translator.config.php',
