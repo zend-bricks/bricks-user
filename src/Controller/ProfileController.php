@@ -78,7 +78,11 @@ class ProfileController extends AbstractActionController
         $formData = $form->getData();
         foreach ($form->getElements() as $element) {
             if ($element instanceof File) {
-                $formData[$element->getName()] = $formData[$element->getName()]['tmp_name'];
+                if ($formData[$element->getName()]['size'] == 0) {
+                    unset($formData[$element->getName()]);
+                } else {
+                    $formData[$element->getName()] = $formData[$element->getName()]['tmp_name'];
+                }
             }
         }
         unset($formData['save']);

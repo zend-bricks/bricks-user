@@ -25,7 +25,7 @@
             <tr>
                 <td><?= $this->translate($profileField['name']) ?></td>
                 <td>
-                    <?php if ($profileField['inputType'] == 'picupload'): ?>
+                    <?php if (!empty($profileField['value']) && $profileField['inputType'] == 'picupload'): ?>
                         <img src="<?= substr($profileField['value'], 6) ?>">
                     <?php else: ?>
                         <?= $profileField['value'] ?>
