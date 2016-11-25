@@ -73,7 +73,12 @@ class Module
         
         $role = 'Guest';
         if ($auth->getIdentity()) {
-            $role = $container->get(UserApiInterface::SERVICE_NAME)->getRoleNameByIdentity($auth->getIdentity());
+            $roleName = $container->get(UserApiInterface::SERVICE_NAME)->getRoleNameByIdentity($auth->getIdentity());
+            if ($roleName) {
+                $role = $roleName;
+            } else {
+                $auth->clearIdentity();
+            }
         }
         
         return $role;
