@@ -4,7 +4,7 @@
     <?= $this->translate('manage.profileoptions') ?>
 </a>
 <?php endif ?>
-<?php if ($this->isAllowed('profile/edit')): ?>
+<?php if (($this->isAllowed('profile/edit') && $identity == $userId) || $this->isAllowed('profile/editany')): ?>
 <a class="btn btn-xs btn-default" href="<?= $this->url('profile/edit', ['id' => $userId]) ?>">
     <?= $this->translate('edit.profile') ?>
 </a>
@@ -14,7 +14,7 @@
     <?= $this->translate('change.password') ?>
 </a>
 <?php endif ?>
-<?php if ($this->isAllowed('auth/selfDelete')): ?>
+<?php if ($this->isAllowed('auth/selfDelete') && $identity == $userId): ?>
 <a class="btn btn-xs btn-default" href="<?= $this->url('auth/selfDelete') ?>">
     <?= $this->translate('self.delete') ?>
 </a>

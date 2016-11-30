@@ -9,9 +9,12 @@ use Zend\Form\Element\File;
 use Zend\Form\Element\Submit;
 use ZendBricks\BricksUser\Form\ProfileOptionForm;
 use Zend\InputFilter\FileInput;
+use Zend\InputFilter\InputFilterProviderInterface;
 
-class ProfileForm extends Form
+class ProfileForm extends Form implements InputFilterProviderInterface
 {
+    protected $inputFilterSpec = [];
+
     public function __construct(array $profileOptions, array $config) {
         parent::__construct();
         $this->setAttribute('method', 'post');
@@ -41,7 +44,7 @@ class ProfileForm extends Form
                     } else {
                         $uploadTarget = $config['upload_target']['default'];
                     }
-                    $this->getInputFilter()->add([
+                    $this->inputFilterSpec[] = [
                         'type' => FileInput::class,
                         'name' => $profileOption['name'],
                         'required' => false,
@@ -60,7 +63,7 @@ class ProfileForm extends Form
                                 'name' => 'fileisimage'
                             ]
                         ]
-                    ]);
+                    ];
                     break;
                 default:
                     break 2;
@@ -74,5 +77,10 @@ class ProfileForm extends Form
         $submit->setValue('save');
         $submit->setAttribute('class', 'btn btn-primary');
         $this->add($submit);
+    }
+    
+    public function getInputFilterSpecification()
+    {
+        return $this->inputFilterSpec;
     }
 }
