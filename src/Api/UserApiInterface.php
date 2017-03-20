@@ -317,6 +317,8 @@ interface UserApiInterface {
     
     public function setProfileSettings($userId, array $data);
     
+    public function mayIdentityEditAnyProfile($userId);
+    
     /**
      * Event that is triggered when a new role is assigned to a user
      * This event could be used for cache-control, info mails ...

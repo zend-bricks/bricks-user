@@ -84,6 +84,7 @@ class AuthController extends AbstractActionController
                     $token = $this->generateToken();
                     $this->api->createRegisterToken($userId, $token);
                     $this->mailModel->sendConfirmRegistrationMail($formData['email'], $formData['username'], $token, $this->projectName);
+                    $this->flashMessenger()->addSuccessMessage('register.sent.mail');
                     return $this->redirect()->toRoute('home');
                 }
             }        

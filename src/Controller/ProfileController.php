@@ -9,6 +9,7 @@ use Zend\Authentication\AuthenticationService;
 use ZendBricks\BricksUser\Form\ProfileForm;
 use Zend\Form\Form;
 use Zend\Form\Element\File;
+use Zend\View\Model\ViewModel;
 
 class ProfileController extends AbstractActionController
 {
@@ -27,11 +28,12 @@ class ProfileController extends AbstractActionController
     
     public function showAction()
     {
-        $id = $this->params()->fromRoute('id', $this->authService->getIdentity());
+        $identity = $this->authService->getIdentity();
+        $id = $this->params()->fromRoute('id', $identity);
         $profileData = $this->api->getProfileSettings($id);
 
         return [
-            'identity' => $this->authService->getIdentity(),
+            'identity' => $identity,
             'userId' => $id,
             'displayName' => $this->api->getUsernameByUserId($id),
             'profileData' => $profileData
@@ -40,7 +42,16 @@ class ProfileController extends AbstractActionController
     
     public function editAction()
     {
-        $id = $this->params()->fromRoute('id', $this->authService->getIdentity());
+        $identity = $this->authService->getIdentity();
+        $id = $this->params()->fromRoute('id', $identity);
+        if ($id != $identity && !$this->api->mayIdentityEditAnyProfile($identity)) {
+            $this->getResponse()->setStatusCode(403);
+
+            $viewModel = new ViewModel();
+            $viewModel->setTemplate('error/403');
+            return $viewModel;
+        }
+        
         $form = $this->getProfileForm();
         
         foreach ($this->api->getProfileSettings($id) as $profileSetting) {
