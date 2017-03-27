@@ -34,6 +34,7 @@ class UserController extends CrudController
     
     protected function save($data, $id = null)
     {
+        $this->api->onUserRoleChanged($id);
         return $this->api->saveUser($data, $id);
     }
     
